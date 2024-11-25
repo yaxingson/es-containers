@@ -1,0 +1,17 @@
+{
+	"compilerOptions":{
+		"target":"es2015",
+		"moduleResolution":"node10",
+		"resolveJsonModule":true,
+		"allowSyntheticDefaultImports":true,
+		"types":[
+
+		],
+		"paths":{
+			"interface/*":["./lib/interface/*"]
+		},
+		"outDir":"dist",
+		"declarationMap":false
+	},
+	"include":["./lib/*"]
+}

@@ -1,0 +1,81 @@
+{
+  "name": "es-containers",
+  "author": "yaxingson <3228891558@qq.com>",
+  "version": "0.0.6",
+  "description": "implementation of various data structures and algorithms in javascript",
+  "keywords": [
+    "container",
+    "data structure",
+    "list",
+    "set",
+    "map"
+  ],
+  "homepage": "https://github.com/yaxingson/es-containers",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yaxingson/es-containers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yaxingson/es-containers/issues"
+  },
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default":"./dist/es-containers.js"
+    },
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "import": "./dist/*/index.js",
+      "require": "./dist/*/index.cjs"
+    }
+  },
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "test": "vitest --run --dir lib/list --coverage",
+    "build": "rm -rf dist && node scripts/build.cjs && tsc --declaration --emitDeclarationOnly",
+    "lint": "eslint ./lib/**",
+    "coverage": "pnpm test --coverage",
+    "prepare": "husky",
+    "style:check": "prettier . --check",
+    "semantic-release": "semantic-release",
+    "release:check": "semantic-release --dry-run"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-transform-runtime": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/runtime": "^7.26.0",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-html": "^1.0.4",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@types/node": "^22.8.2",
+    "@vitest/coverage-v8": "^1.6.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.2.0",
+    "execa": "^9.0.2",
+    "fast-glob": "^3.3.2",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "rollup": "^4.13.0",
+    "rollup-plugin-delete": "^2.1.0",
+    "rollup-plugin-license": "^3.5.3",
+    "semantic-release": "^24.2.0",
+    "tinybench": "^3.0.6",
+    "tslib": "^2.8.1",
+    "typescript": "^5.4.3",
+    "vitest": "^1.4.0"
+  },
+  "license": "MIT"
+}
