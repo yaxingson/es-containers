@@ -1,4 +1,4 @@
-import type { Container } from 'interface/container'
+import type { Container } from 'functions/container'
 
 export interface List<T> extends Container<T> {
   get(index:number):T

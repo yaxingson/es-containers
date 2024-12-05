@@ -1,2 +1,5 @@
+export { default as HashBidiMap } from './hashBidiMap'
 export { default as HashMap } from './hashMap'
+export { default as LinkedHashMap } from './linkedHashMap'
+export { default as TreeBidiMap } from './treeBidiMap'
 export { default as TreeMap } from './treeMap'

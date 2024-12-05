@@ -1,3 +1,4 @@
+import { OutOfRangeError, IllegalIndexError } from '../common'
 import type { List } from './types'
 
 type CompareFn<T> = (x:T, y:T)=>boolean
@@ -5,32 +6,20 @@ type CompareFn<T> = (x:T, y:T)=>boolean
 const lt: CompareFn<number|string> = (x, y) => x < y
 const gt: CompareFn<number|string> = (x, y) => x > y
 
-class OutOfRangeError extends Error {
-  constructor() {
-    super()
-  }
-}
-
-class IllegalIndexError extends Error {
-  constructor() {
-    super()
-  }
-}
-
 export default class ArrayList<T> implements List<T> {
-  private cap = 2**32 - 1 
+  private cap = 2**32 - 1
   private length = 0
   private items:T[] = []
-  
+
   private isIllegal(index:number) {
     return index < 0 || index >= this.length
   }
 
-  constructor() 
+  constructor()
   constructor(iterable:Iterable<T>)
-  constructor(length:number, fillValue:T) 
+  constructor(length:number, fillValue:T)
   constructor(lengthOrIterable?:number|Iterable<T>, fillValue?:T) {
-    
+
   }
 
   append(item:T) {
@@ -80,7 +69,7 @@ export default class ArrayList<T> implements List<T> {
   }
 
   set(index: number, item: T) {
-      
+
   }
 
   removeAt(index: number) {
@@ -91,7 +80,7 @@ export default class ArrayList<T> implements List<T> {
     for(let i = index; i < this.length; i++) {
       this.items[i] = this.items[i+1]
     }
-    
+
     this.length--
 
     return item
@@ -111,7 +100,7 @@ export default class ArrayList<T> implements List<T> {
   }
 
   size() { return this.length }
-  
+
   sort(compareFn:CompareFn<T>=gt as CompareFn<T>) {
     for(let i = 0; i < this.length; i++) {
       for(let j = i+1; j < this.length; j++) {
@@ -119,7 +108,7 @@ export default class ArrayList<T> implements List<T> {
           const temp = this.items[i]
           this.items[i] = this.items[j]
           this.items[j] = temp
-        } 
+        }
       }
     }
   }
