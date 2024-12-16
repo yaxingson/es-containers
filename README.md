@@ -1,3 +1,11 @@
+# es-containers
+
+![](https://img.shields.io/npm/v/es-containers.svg)
+![](https://img.shields.io/npm/dm/es-containers.svg)
+![](https://img.shields.io/bundlejs/size/es-containers)
+![](https://img.shields.io/github/languages/top/yaxingson/es-containers)
+![](https://img.shields.io/npm/l/es-containers)
+
 ## Get started
 
 ### Install
